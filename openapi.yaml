@@ -1,0 +1,40 @@
+openapi: "3.0.2"
+info:
+  title: API Title
+  version: "1.0"
+servers:
+  - url: https://api.server.test/v1
+paths:
+  /pets:
+    patch:
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/PetByAge'
+                  - $ref: '#/components/schemas/PetByType'
+components:
+  schemas:
+    PetByAge:
+      type: object
+      properties:
+        age:
+          type: integer
+        nickname:
+          type: string
+      required:
+        - age
+
+    PetByType:
+      type: object
+      properties:
+        pet_type:
+          type: string
+          enum: [Cat, Dog]
+        hunts:
+          type: boolean
+      required:
+        - pet_type

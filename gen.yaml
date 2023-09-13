@@ -1,4 +1,9 @@
 configVersion: 1.0.0
+management:
+  docChecksum: c75c36a70e1c11640c68dfef640a51d8
+  docVersion: "1.0"
+  speakeasyVersion: 1.83.2
+  generationVersion: 2.109.3
 generation:
   comments:
     disableComments: false
@@ -7,8 +12,12 @@ generation:
   sdkClassName: APITest
   singleTagPerOp: false
   tagNamespacingDisabled: false
+features:
+  go:
+    core: 2.88.1
+    globalServerURLs: 2.82.0
 go:
-  version: 0.0.1
+  version: 0.1.0
   clientServerStatusCodesAsErrors: true
   maxMethodParams: 0
   packageName: github.com/speakeasy-sdks/blakes-api-go

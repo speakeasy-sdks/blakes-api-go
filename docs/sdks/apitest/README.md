@@ -16,11 +16,11 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/blakes-api-go"
+	blakesapigo "github.com/speakeasy-sdks/blakes-api-go"
 )
 
 func main() {
-    s := apitest.New()
+    s := blakesapigo.New()
 
     ctx := context.Background()
     res, err := s.APITest.PatchPets(ctx)
@@ -28,7 +28,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PatchPets200ApplicationJSONAnyOf != nil {
+    if res.PatchPets200ApplicationJSONOneOf != nil {
         // handle response
     }
 }

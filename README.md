@@ -19,25 +19,26 @@ go get github.com/speakeasy-sdks/blakes-api-go
 ```go
 package main
 
-import(
+import (
 	"context"
-	"log"
 	blakesapigo "github.com/speakeasy-sdks/blakes-api-go"
+	"log"
 )
 
 func main() {
-    s := blakesapigo.New()
+	s := blakesapigo.New()
 
-    ctx := context.Background()
-    res, err := s.PatchPets(ctx)
-    if err != nil {
-        log.Fatal(err)
-    }
+	ctx := context.Background()
+	res, err := s.APITest.PatchPets(ctx)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    if res.PatchPets200ApplicationJSONOneOf != nil {
-        // handle response
-    }
+	if res.PatchPets200ApplicationJSONOneOf != nil {
+		// handle response
+	}
 }
+
 ```
 <!-- End SDK Example Usage -->
 
@@ -52,8 +53,6 @@ func main() {
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 

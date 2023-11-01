@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: c75c36a70e1c11640c68dfef640a51d8
   docVersion: "1.0"
-  speakeasyVersion: 1.108.1
-  generationVersion: 2.172.4
+  speakeasyVersion: 1.109.2
+  generationVersion: 2.173.0
 generation:
   comments:
     disableComments: false
@@ -17,9 +17,9 @@ features:
   go:
     core: 2.94.0
     globalServerURLs: 2.82.0
-    unions: 2.84.0
+    unions: 2.84.1
 go:
-  version: 0.3.0
+  version: 0.3.1
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   installationURL: https://github.com/speakeasy-sdks/blakes-api-go

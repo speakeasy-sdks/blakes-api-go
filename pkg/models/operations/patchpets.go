@@ -43,16 +43,16 @@ func CreatePatchPets200ApplicationJSONPetByType(petByType shared.PetByType) Patc
 
 func (u *PatchPets200ApplicationJSON) UnmarshalJSON(data []byte) error {
 
-	petByAge := new(shared.PetByAge)
+	petByAge := shared.PetByAge{}
 	if err := utils.UnmarshalJSON(data, &petByAge, "", true, true); err == nil {
-		u.PetByAge = petByAge
+		u.PetByAge = &petByAge
 		u.Type = PatchPets200ApplicationJSONTypePetByAge
 		return nil
 	}
 
-	petByType := new(shared.PetByType)
+	petByType := shared.PetByType{}
 	if err := utils.UnmarshalJSON(data, &petByType, "", true, true); err == nil {
-		u.PetByType = petByType
+		u.PetByType = &petByType
 		u.Type = PatchPets200ApplicationJSONTypePetByType
 		return nil
 	}

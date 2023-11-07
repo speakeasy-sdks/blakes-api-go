@@ -14,12 +14,12 @@ func main() {
 	s := blakesapigo.New()
 
 	ctx := context.Background()
-	res, err := s.APITest.PatchPets(ctx)
+	res, err := s.PatchPets(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.PatchPets200ApplicationJSONOneOf != nil {
+	if res.OneOf != nil {
 		// handle response
 	}
 }

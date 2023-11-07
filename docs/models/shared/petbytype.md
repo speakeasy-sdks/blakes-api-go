@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field                                                       | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `Hunts`                                                     | **bool*                                                     | :heavy_minus_sign:                                          | N/A                                                         |
-| `PetType`                                                   | [PetByTypePetType](../../models/shared/petbytypepettype.md) | :heavy_check_mark:                                          | N/A                                                         |
+| Field                                            | Type                                             | Required                                         | Description                                      |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| `Hunts`                                          | **bool*                                          | :heavy_minus_sign:                               | N/A                                              |
+| `PetType`                                        | [shared.PetType](../../models/shared/pettype.md) | :heavy_check_mark:                               | N/A                                              |

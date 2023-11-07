@@ -9,58 +9,58 @@ import (
 	"net/http"
 )
 
-type PatchPets200ApplicationJSONType string
+type PatchPetsResponseBodyType string
 
 const (
-	PatchPets200ApplicationJSONTypePetByAge  PatchPets200ApplicationJSONType = "PetByAge"
-	PatchPets200ApplicationJSONTypePetByType PatchPets200ApplicationJSONType = "PetByType"
+	PatchPetsResponseBodyTypePetByAge  PatchPetsResponseBodyType = "PetByAge"
+	PatchPetsResponseBodyTypePetByType PatchPetsResponseBodyType = "PetByType"
 )
 
-type PatchPets200ApplicationJSON struct {
+type PatchPetsResponseBody struct {
 	PetByAge  *shared.PetByAge
 	PetByType *shared.PetByType
 
-	Type PatchPets200ApplicationJSONType
+	Type PatchPetsResponseBodyType
 }
 
-func CreatePatchPets200ApplicationJSONPetByAge(petByAge shared.PetByAge) PatchPets200ApplicationJSON {
-	typ := PatchPets200ApplicationJSONTypePetByAge
+func CreatePatchPetsResponseBodyPetByAge(petByAge shared.PetByAge) PatchPetsResponseBody {
+	typ := PatchPetsResponseBodyTypePetByAge
 
-	return PatchPets200ApplicationJSON{
+	return PatchPetsResponseBody{
 		PetByAge: &petByAge,
 		Type:     typ,
 	}
 }
 
-func CreatePatchPets200ApplicationJSONPetByType(petByType shared.PetByType) PatchPets200ApplicationJSON {
-	typ := PatchPets200ApplicationJSONTypePetByType
+func CreatePatchPetsResponseBodyPetByType(petByType shared.PetByType) PatchPetsResponseBody {
+	typ := PatchPetsResponseBodyTypePetByType
 
-	return PatchPets200ApplicationJSON{
+	return PatchPetsResponseBody{
 		PetByType: &petByType,
 		Type:      typ,
 	}
 }
 
-func (u *PatchPets200ApplicationJSON) UnmarshalJSON(data []byte) error {
+func (u *PatchPetsResponseBody) UnmarshalJSON(data []byte) error {
 
 	petByAge := shared.PetByAge{}
 	if err := utils.UnmarshalJSON(data, &petByAge, "", true, true); err == nil {
 		u.PetByAge = &petByAge
-		u.Type = PatchPets200ApplicationJSONTypePetByAge
+		u.Type = PatchPetsResponseBodyTypePetByAge
 		return nil
 	}
 
 	petByType := shared.PetByType{}
 	if err := utils.UnmarshalJSON(data, &petByType, "", true, true); err == nil {
 		u.PetByType = &petByType
-		u.Type = PatchPets200ApplicationJSONTypePetByType
+		u.Type = PatchPetsResponseBodyTypePetByType
 		return nil
 	}
 
 	return errors.New("could not unmarshal into supported union types")
 }
 
-func (u PatchPets200ApplicationJSON) MarshalJSON() ([]byte, error) {
+func (u PatchPetsResponseBody) MarshalJSON() ([]byte, error) {
 	if u.PetByAge != nil {
 		return utils.MarshalJSON(u.PetByAge, "", true)
 	}
@@ -80,7 +80,7 @@ type PatchPetsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Updated
-	PatchPets200ApplicationJSONOneOf *PatchPets200ApplicationJSON
+	OneOf *PatchPetsResponseBody
 }
 
 func (o *PatchPetsResponse) GetContentType() string {
@@ -104,9 +104,9 @@ func (o *PatchPetsResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *PatchPetsResponse) GetPatchPets200ApplicationJSONOneOf() *PatchPets200ApplicationJSON {
+func (o *PatchPetsResponse) GetOneOf() *PatchPetsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.PatchPets200ApplicationJSONOneOf
+	return o.OneOf
 }

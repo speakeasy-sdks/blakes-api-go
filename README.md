@@ -29,12 +29,12 @@ func main() {
 	s := blakesapigo.New()
 
 	ctx := context.Background()
-	res, err := s.APITest.PatchPets(ctx)
+	res, err := s.PatchPets(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.PatchPets200ApplicationJSONOneOf != nil {
+	if res.OneOf != nil {
 		// handle response
 	}
 }
@@ -99,7 +99,6 @@ You can override the default server globally using the `WithServerIndex` option 
 
 For example:
 
-
 ```go
 package main
 
@@ -115,12 +114,12 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.APITest.PatchPets(ctx)
+	res, err := s.PatchPets(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.PatchPets200ApplicationJSONOneOf != nil {
+	if res.OneOf != nil {
 		// handle response
 	}
 }
@@ -131,7 +130,6 @@ func main() {
 ## Override Server URL Per-Client
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
-
 
 ```go
 package main
@@ -148,12 +146,12 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.APITest.PatchPets(ctx)
+	res, err := s.PatchPets(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.PatchPets200ApplicationJSONOneOf != nil {
+	if res.OneOf != nil {
 		// handle response
 	}
 }

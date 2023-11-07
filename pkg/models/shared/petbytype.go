@@ -7,18 +7,18 @@ import (
 	"fmt"
 )
 
-type PetByTypePetType string
+type PetType string
 
 const (
-	PetByTypePetTypeCat PetByTypePetType = "Cat"
-	PetByTypePetTypeDog PetByTypePetType = "Dog"
+	PetTypeCat PetType = "Cat"
+	PetTypeDog PetType = "Dog"
 )
 
-func (e PetByTypePetType) ToPointer() *PetByTypePetType {
+func (e PetType) ToPointer() *PetType {
 	return &e
 }
 
-func (e *PetByTypePetType) UnmarshalJSON(data []byte) error {
+func (e *PetType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -27,16 +27,16 @@ func (e *PetByTypePetType) UnmarshalJSON(data []byte) error {
 	case "Cat":
 		fallthrough
 	case "Dog":
-		*e = PetByTypePetType(v)
+		*e = PetType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PetByTypePetType: %v", v)
+		return fmt.Errorf("invalid value for PetType: %v", v)
 	}
 }
 
 type PetByType struct {
-	Hunts   *bool            `json:"hunts,omitempty"`
-	PetType PetByTypePetType `json:"pet_type"`
+	Hunts   *bool   `json:"hunts,omitempty"`
+	PetType PetType `json:"pet_type"`
 }
 
 func (o *PetByType) GetHunts() *bool {
@@ -46,9 +46,9 @@ func (o *PetByType) GetHunts() *bool {
 	return o.Hunts
 }
 
-func (o *PetByType) GetPetType() PetByTypePetType {
+func (o *PetByType) GetPetType() PetType {
 	if o == nil {
-		return PetByTypePetType("")
+		return PetType("")
 	}
 	return o.PetType
 }

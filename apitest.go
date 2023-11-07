@@ -119,9 +119,9 @@ func New(opts ...SDKOption) *APITest {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0",
-			SDKVersion:        "0.3.1",
-			GenVersion:        "2.173.0",
-			UserAgent:         "speakeasy-sdk/go 0.3.1 2.173.0 1.0 github.com/speakeasy-sdks/blakes-api-go",
+			SDKVersion:        "0.4.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.4.0 2.181.1 1.0 github.com/speakeasy-sdks/blakes-api-go",
 		},
 	}
 	for _, opt := range opts {
@@ -178,12 +178,12 @@ func (s *APITest) PatchPets(ctx context.Context) (*operations.PatchPetsResponse,
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.PatchPets200ApplicationJSON
+			var out operations.PatchPetsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.PatchPets200ApplicationJSONOneOf = &out
+			res.OneOf = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

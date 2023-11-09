@@ -44,5 +44,7 @@ func main() {
 
 ### Response
 
-**[*operations.PatchPetsResponse](../../models/operations/patchpetsresponse.md), error**
-
+**[*operations.PatchPetsResponse](../../pkg/models/operations/patchpetsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

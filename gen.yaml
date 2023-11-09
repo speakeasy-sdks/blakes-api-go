@@ -2,19 +2,19 @@ configVersion: 1.0.0
 management:
   docChecksum: c75c36a70e1c11640c68dfef640a51d8
   docVersion: "1.0"
-  speakeasyVersion: 1.114.1
-  generationVersion: 2.181.1
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: APITest
   repoURL: https://github.com/speakeasy-sdks/blakes-api-go.git
 features:
   go:
-    core: 3.1.0
+    core: 3.1.2
     globalServerURLs: 2.82.0
     unions: 2.85.0
 go:
-  version: 0.4.0
+  version: 0.4.1
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
@@ -25,8 +25,10 @@ go:
       operations: pkg/models/operations
       shared: pkg/models/shared
       webhooks: pkg/models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/speakeasy-sdks/blakes-api-go
   maxMethodParams: 0
+  outputModelSuffix: output
   packageName: github.com/speakeasy-sdks/blakes-api-go
   published: true
   repoSubDirectory: .

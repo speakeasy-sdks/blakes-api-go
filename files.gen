@@ -22,10 +22,10 @@ pkg/utils/utils.go
 /pkg/models/shared/petbyage.go
 /pkg/models/shared/petbytype.go
 USAGE.md
-docs/models/operations/patchpetsresponsebody.md
-docs/models/operations/patchpetsresponse.md
-docs/models/shared/petbyage.md
-docs/models/shared/pettype.md
-docs/models/shared/petbytype.md
+docs/pkg/models/operations/patchpetsresponsebody.md
+docs/pkg/models/operations/patchpetsresponse.md
+docs/pkg/models/shared/petbyage.md
+docs/pkg/models/shared/pettype.md
+docs/pkg/models/shared/petbytype.md
 docs/sdks/apitest/README.md
 .gitattributes

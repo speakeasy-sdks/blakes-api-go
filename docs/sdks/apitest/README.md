@@ -15,9 +15,9 @@
 package main
 
 import(
+	blakesapigo "github.com/speakeasy-sdks/blakes-api-go"
 	"context"
 	"log"
-	blakesapigo "github.com/speakeasy-sdks/blakes-api-go"
 )
 
 func main() {

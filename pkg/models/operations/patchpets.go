@@ -16,6 +16,7 @@ const (
 	PatchPetsResponseBodyTypePetByType PatchPetsResponseBodyType = "PetByType"
 )
 
+// PatchPetsResponseBody - Updated
 type PatchPetsResponseBody struct {
 	PetByAge  *shared.PetByAge
 	PetByType *shared.PetByType

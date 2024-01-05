@@ -1,0 +1,50 @@
+lockVersion: 2.0.0
+id: f4d2fca2-3c17-47ac-90ea-cc1c77c9cd10
+management:
+  docChecksum: c75c36a70e1c11640c68dfef640a51d8
+  docVersion: "1.0"
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 0.5.1
+  configChecksum: 78f65b800185150c4e67e2532345d180
+  repoURL: https://github.com/speakeasy-sdks/blakes-api-go.git
+  repoSubDirectory: .
+  installationURL: https://github.com/speakeasy-sdks/blakes-api-go
+  published: true
+features:
+  go:
+    core: 3.3.0
+    globalServerURLs: 2.82.1
+    unions: 2.85.2
+generatedFiles:
+  - apitest.go
+  - go.mod
+  - go.sum
+  - tests/helpers.go
+  - pkg/models/sdkerrors/sdkerror.go
+  - pkg/types/bigint.go
+  - pkg/types/date.go
+  - pkg/types/datetime.go
+  - pkg/types/decimal.go
+  - pkg/types/pointers.go
+  - pkg/utils/contenttype.go
+  - pkg/utils/form.go
+  - pkg/utils/headers.go
+  - pkg/utils/json.go
+  - pkg/utils/pathparams.go
+  - pkg/utils/queryparams.go
+  - pkg/utils/requestbody.go
+  - pkg/utils/retries.go
+  - pkg/utils/security.go
+  - pkg/utils/utils.go
+  - /pkg/models/operations/patchpets.go
+  - /pkg/models/shared/petbyage.go
+  - /pkg/models/shared/petbytype.go
+  - docs/pkg/models/operations/patchpetsresponsebody.md
+  - docs/pkg/models/operations/patchpetsresponse.md
+  - docs/pkg/models/shared/petbyage.md
+  - docs/pkg/models/shared/pettype.md
+  - docs/pkg/models/shared/petbytype.md
+  - docs/sdks/apitest/README.md
+  - USAGE.md
+  - .gitattributes

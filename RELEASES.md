@@ -139,3 +139,13 @@ Based on:
 - [go v0.5.2] .
 ### Releases
 - [Go v0.5.2] https://github.com/speakeasy-sdks/blakes-api-go/releases/tag/v0.5.2 - .
+
+## 2024-02-06 00:21:39
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.167.3 (2.250.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.6.0] .
+### Releases
+- [Go v0.6.0] https://github.com/speakeasy-sdks/blakes-api-go/releases/tag/v0.6.0 - .

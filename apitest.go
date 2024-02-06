@@ -119,9 +119,9 @@ func New(opts ...SDKOption) *APITest {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0",
-			SDKVersion:        "0.5.2",
-			GenVersion:        "2.237.2",
-			UserAgent:         "speakeasy-sdk/go 0.5.2 2.237.2 1.0 github.com/speakeasy-sdks/blakes-api-go",
+			SDKVersion:        "0.6.0",
+			GenVersion:        "2.250.2",
+			UserAgent:         "speakeasy-sdk/go 0.6.0 2.250.2 1.0 github.com/speakeasy-sdks/blakes-api-go",
 		},
 	}
 	for _, opt := range opts {

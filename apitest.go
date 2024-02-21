@@ -121,9 +121,9 @@ func New(opts ...SDKOption) *APITest {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0",
-			SDKVersion:        "0.7.0",
-			GenVersion:        "2.258.0",
-			UserAgent:         "speakeasy-sdk/go 0.7.0 2.258.0 1.0 github.com/speakeasy-sdks/blakes-api-go",
+			SDKVersion:        "0.7.1",
+			GenVersion:        "2.263.3",
+			UserAgent:         "speakeasy-sdk/go 0.7.1 2.263.3 1.0 github.com/speakeasy-sdks/blakes-api-go",
 			Hooks:             hooks.New(),
 		},
 	}
@@ -160,12 +160,12 @@ func (s *APITest) PatchPets(ctx context.Context) (*operations.PatchPetsResponse,
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -188,7 +188,6 @@ func (s *APITest) PatchPets(ctx context.Context) (*operations.PatchPetsResponse,
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PatchPetsResponse{

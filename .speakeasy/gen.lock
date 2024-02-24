@@ -4,16 +4,16 @@ management:
   docChecksum: c75c36a70e1c11640c68dfef640a51d8
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.263.3
-  releaseVersion: 0.7.1
-  configChecksum: 934f63216bc8b04f30f96eff7687c8e4
+  generationVersion: 2.272.4
+  releaseVersion: 0.7.2
+  configChecksum: 3972f80d4b801089630e014be33235a7
   repoURL: https://github.com/speakeasy-sdks/blakes-api-go.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/blakes-api-go
   published: true
 features:
   go:
-    core: 3.4.1
+    core: 3.4.3
     globalServerURLs: 2.82.1
     unions: 2.85.3
 generatedFiles:
